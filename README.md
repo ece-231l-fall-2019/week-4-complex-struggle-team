@@ -8,15 +8,19 @@ communication between the team members through the use of these features.
 ## Part 1: Recursion with pointers
 
 In your personal repository for week 3, do the following:
-  * Modify your binarysearch algorithm (the one which uses pointers) to use *recursion*.
-  * Add two files `sort.h` and `sort.cpp`. The `sort.h` file should contain the following function declaration:
+  * Add a new version of your binarysearch algorithm (the one which uses pointers) which uses
+  *recursion*. You can call it `binarySearchRecursive` or similiar. Compare it's run time with the
+  loop version.
+ 
+  * Add two files `sort.h` and `sort.cpp`. The `sort.h` file should contain the following function
+  declaration:
   
         bubblesort(int *begin, const int *end);
         
-  * In `sort.cpp` implement the bubblesort method.
+  * In `sort.cpp` implement the bubble sort algorithm.
     
-  * In `runtests.cpp`, add a call to sort the `search` vector by calling your `bubblesort` method. Print the
-  entire sorted array to show that it is indeed sorted.
+  * In `runtests.cpp`, add a call to sort the `search` vector by calling your `bubblesort` method.
+  Print the entire sorted array to show that it is indeed sorted.
 
 ## Part 2: Complex number class
 
@@ -35,8 +39,9 @@ work as expected and return correct results.
 ## Strategy
 
 After helping each other complete **Part 1**, break up the tasks such that team member 1
-implements **Part 2** *while* team member 2 implements **Part 3**.
-
+implements **Part 2** *while* team member 2 implements **Part 3**. The goal is to try to implement
+the tests for the `Complex` class without prior knowledge of the specific implementation of the
+class.
 
 ## Deliverables and rubric
 
