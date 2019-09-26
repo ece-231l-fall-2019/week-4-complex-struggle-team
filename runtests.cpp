@@ -30,7 +30,13 @@ int main()
 	// TODO:
 	// Write *at least* 20 more tests to fully test
 	// your Complex class.
+	
+	Complex z2 (5, 3);
+	Complex z3 (4, 3);
+	Complex z4 = z2 + z3;
+	Complex z5 (9 , 6);
 
+	Assert (z4 == z5, "addition works");
 
 	return 0;
 }

@@ -1,4 +1,5 @@
 #include "Complex.h"
+#include <cmath>
 
 Complex::Complex()
 {
@@ -13,9 +14,8 @@ Complex::Complex( double re, double im)
 
 }
 
-Complex();
 
-Complex::Complex( const Complex& z);
+Complex::Complex ( const Complex& z)
 {
 	_real = z._real;
 	_imag = z._imag;
@@ -83,7 +83,7 @@ Complex& Complex::operator=( const Complex& z)
 	return *this;
 }
 
-Complex& Complex::operator+( const Complex& a, const Complex& b)
+Complex operator+ ( const Complex& a, const Complex& b)
 {
 	double rl = a.real() + b.real();
 	double img = a.imag() + b.imag();
@@ -93,7 +93,7 @@ Complex& Complex::operator+( const Complex& a, const Complex& b)
 	return total;
 }
 
-Complex& Complex::operator-( const Complex& a, const Complex& b)
+Complex operator-( const Complex& a, const Complex& b)
 {
 
 	double rl = a.real() - b.real();
@@ -104,7 +104,7 @@ Complex& Complex::operator-( const Complex& a, const Complex& b)
 	return total;
 }
 
-Complex& Complex::operator*( const Complex& a, const Complex& b)
+Complex operator*( const Complex& a, const Complex& b)
 {
 	double f = a.real() * b.real();
 	double o = a.real() * b.imag();
@@ -119,10 +119,10 @@ Complex& Complex::operator*( const Complex& a, const Complex& b)
 	return total;
 }
 
-Complex& Complex::operator/( const Complex& a, const Complex& b)
+Complex operator/( const Complex& a, const Complex& b)
 {
 	double t_first = a.real() * b.real();
-	double t_i = a.real() * -1 * b.imag() + b.real * a.imag();
+	double t_i = a.real() * -1 * b.imag() + b.real() * a.imag();
 	double t_last = a.imag() * b.imag();
 
 	double b_first = b.real() * b.real();
@@ -132,8 +132,8 @@ Complex& Complex::operator/( const Complex& a, const Complex& b)
 	double t_imags = t_i;
 	double bottom = b_first + b_last;
 
-	double rl = top_reals / bottom;
-	double img = top_imags / bottom;
+	double rl = t_reals / bottom;
+	double img = t_imags / bottom;
 
 	Complex total(rl, img);
 
@@ -142,33 +142,32 @@ Complex& Complex::operator/( const Complex& a, const Complex& b)
 
 double norm (const Complex& z)
 {
-	double total = z.real() * z.real + z.imag() z.imag();
+	double total = z.real() * z.real() + z.imag()* z.imag();
 
 	return total;
 }
 
-Complex conj(const Complex& z);
+Complex conj(const Complex& z)
 {
-	Complex(z.real(), -(z.imag()));
-	return total
+	return Complex(z.real(), -(z.imag()));
+}
 
-
-bool operator==(const Complex& a, const Complex& b);
+bool operator==(const Complex& a, const Complex& b)
 	{
 		if((a.real() == b.real()) && (a.imag() == b.imag()))
 			return true;
 		else
 			return false;
 	}
-bool operator==(const Complex& a, double r);
+bool operator==(const Complex& a, double r)
 {
 	if(a.real() == r && a.imag() == 0)
-		return true
+		return true;
 	else
 		return false;
 }
 
-bool operator!=(const Complex& a, const Complex& b);
+bool operator!=(const Complex& a, const Complex& b)
 	{
 		if((a.real() != b.real()) && (a.imag() != b.imag()))
 			return true;
@@ -176,19 +175,19 @@ bool operator!=(const Complex& a, const Complex& b);
 			return false;
 	}
 
-bool operator!=(const Complex& a, double r);
+bool operator!=(const Complex& a, double r)
 {
 	if(a.real() != r && a.imag() != 0)
-		return true
+		return true;
 	else
 		return false;
 }
 
 
-std::ostream& operator<<(std::ostream& out, const Complex& z);
+std::ostream& operator<<(std::ostream& out, const Complex& z)
 {
-	out << z.real() << (z.imag() >0? "+": " " << z.imag();
+	out << z.real() << (z.imag() >0? "+": " ") << z.imag();
 
-			return out:
+			return out;
 }
 
