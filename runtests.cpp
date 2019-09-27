@@ -24,7 +24,11 @@ int main()
 	// TODO:
 	// Write *at least* 20 more tests to fully test
 	// your Complex class.
-	
+	Complex z1 (4, 3);
+	Complex z2 (5,5);
+	Complex z3 (6,9);
+	Complex z4 (6,1);
+	Complex z5(6, 9);	
 	// test assert z1
 	 Assert(z1.real() == 4, "real constructor is 4");
 	 Assert(z1.imag() == 3, "imanginary constructor is 3");
@@ -44,21 +48,25 @@ int main()
  std::cout << "z3 + z4 = " << z3 + z4 << std::endl;
  std::cout << "z1 + z4 = " << z1 + z4 << std::endl;
  std::cout << "z2 + z3 = " << z2 + z3 << std::endl;
+ std::cout << "z5 + z4 = " << z5 + z4 << std::endl;
  //subtracting test
   std::cout << "z1 - z2 = " << z1 - z2 << std::endl;
   std::cout << "z3 - z4 = " << z3 - z4 << std::endl;
   std::cout << "z1 - z4 = " << z1 - z4 << std::endl;
   std::cout << "z2 - z3 = " << z2 - z3 << std::endl;
+  std::cout << "z5 - z2 = " << z5 - z2 << std::endl;
   //multplication test
    std::cout << "z1 * z2 = " << z1 * z2 << std::endl;
    std::cout << "z3 * z4 = " << z3 * z4 << std::endl;
    std::cout << "z1 * z4 = " << z1 * z4 << std::endl;
    std::cout << "z2 * z3 = " << z2 * z3 << std::endl;
+   std::cout << "z5 * z1 = " << z5 * z1 << std::endl;
   // division test
    std::cout << "z1 / z2 = " << z1 / z2 << std::endl;
    std::cout << "z3 / z4 = " << z3 / z4 << std::endl;
    std::cout << "z1 / z4 = " << z1 / z4 << std::endl;
    std::cout << "z2 / z3 = " << z2 / z3 << std::endl;
+   std::cout << "z5 / z3 = " << z5 / z3 << std::endl;
    //adding to self test
 	z1 += z2;
 	z3 += z4;
@@ -84,14 +92,15 @@ int main()
 	 std::cout << "the conjugate of z2 = " << conj(z2) << std::endl;
 	 std::cout << "the conjugate of z3 = " << conj(z3) << std::endl;
 	 std::cout << "the conjugate of z4 = " << conj(z4) << std::endl;
+	 std::cout << "the conjugate of z5 = " << conj(z5) << std::endl;
 	 // norm test
 	 std::cout << "the norm of z1 = " << norm(z1) << std::endl;
 	 std::cout << "the norm of z2 = " << norm(z2) << std::endl;	                  
 	std::cout << "the norm of z3 = " << norm(z3) << std::endl;
 	 std::cout << "the norm of z4 = " << norm(z4) << std::endl;
+	 std::cout << "the norm of z5 = " << norm(z5) << std::endl;
 
 	 // compare complex or same as test
-	Complex z5(6, 9);
          std::cout << "remember that z3(6, 9)" << z5 << std::endl;
 	 std::cout << "is z3 same as z5?";
 	 if(z3 == z5)
