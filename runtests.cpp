@@ -24,6 +24,7 @@ int main()
 	// TODO:
 	// Write *at least* 20 more tests to fully test
 	// your Complex class.
+	
 	// test assert z1
 	 Assert(z1.real() == 4, "real constructor is 4");
 	 Assert(z1.imag() == 3, "imanginary constructor is 3");
